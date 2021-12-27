@@ -1,85 +1,65 @@
-## Deskripsi Aplikasi 
-Source Code Aplikasi Penjualan Barang sederhana berbasis Website dengan PHP & MYSQL.
-<br>
-<br>
-Source Blog : <a href="https://www.codekop.com/read/source-code-aplikasi-penjualan-barang-kasir-dengan-php-amp-mysql-gratis.html" target="_blank">
-https://www.codekop.com/read/source-code-aplikasi-penjualan-barang-kasir-dengan-php-amp-mysql-gratis.html</a>
-<br>
-<br>
-Beli Versi Terbaru nya disini : <a href="https://www.codekop.com/products/source-code-aplikasi-pos-penjualan-barang-kasir-dengan-php-mysql-3.html">https://www.codekop.com/products/source-code-aplikasi-pos-penjualan-barang-kasir-dengan-php-mysql-3.html</a>
-<br>
-<br>
-<span style="color:red"><b> * Untuk Reuploader Source Code tolong cantumin sumber juga ya, terima kasih :)</b></span>
+# [Start Bootstrap - SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/)
 
-## Setting Koneksi PHP
-setting koneksi di config.php dan ganti username, password dan dbname nya
+[SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/) is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
 
-## Penggunaan Login
-Username : admin
-<br/>
-Password : 123
-<br>
-<span style="color:red">* Penggunaan Login untuk <b>single User</b> </span>
+For the legacy Bootstrap 3 version of this theme, you can view the [last stable release](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/releases/tag/v3.3.7%2B1) of SB Admin 2 for Bootstrap 3.
 
-## Contoh Program 
-- Login
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/login.png">
+## Preview
 
-- Dashboard 
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/1.png">
+[![SB Admin 2 Preview](https://assets.startbootstrap.com/img/screenshots/themes/sb-admin-2.png)](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
 
-- Tabel Barang
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/2.png">
+**[Launch Live Preview](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)**
 
-- Keranjang / Transaksi
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/4.png">
+## Status
 
-- Laporan 
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/5.png">
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin-2.svg)](https://www.npmjs.com/package/startbootstrap-sb-admin-2)
+[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2)
+[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2)
+[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2?type=dev)
 
-- Nama Toko 
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/6.png">
+## Download and Installation
 
-- Atur User 
-<img src="https://raw.githubusercontent.com/fauzan1892/pos-kasir-php/master/assets/img/pic/7.png">
+To begin using this template, choose one of the following options to get started:
 
-## Changelog
-31 Januari 2021<br>
-- Tambah Sortir khusus stok kurang dari >= 3
-- Cari Per Tanggal Laporan 
-- Cari Per bulan Laporan
-- Fix Perhitungan Laporan
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/)
+* Install via npm: `npm i startbootstrap-sb-admin-2`
+* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
 
-06 Oktober 2020<br>
-- revisi session error pada hosting dengan error : 
-Warning: session_start(): Cannot send session cookie - headers already sent by (output started at [duplicate] -> fixed
-- Ganti background login, header
-- Ganti Header table barang, table keranjang, table laporan
-- Fix transaksi -> transaksi stok < keranjang tidak bisa diproses
-- penghapusan trigger sql
-- penambahan fungsi transaksi untuk pengurangan stok barang setelah transaksi bayar 
+## Usage
 
-23 Agustus 2020<br>
-- revisi print
-- menambahkan alert telah di bayar di bagian bayar transaksi penjualan
+After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
-18 Juli 2020<br>
-- fix edit kategori
-- fix modal tambah barang
-- rapihin form laporan
+### Gulp Tasks
 
-29 Agustus 2019 <br>
-- laporan tampilan error  -> fixed
-- klik button bayar transaksi  tidak masuk ke laporan -> fixed
-- pencarian barang pada menu transaksi sudah otomatis dengan tambahan jquery ajax
-- data laporan dapat dicari berdasarkan periode bulan dan tahun
+* `gulp` the default task that builds everything
+* `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
+* `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
+* `gulp js` minifies the themes JS file
+* `gulp vendor` copies dependencies from node_modules to the vendor directory
 
-<br>
-** Jika ada issues atau revisi atau menambahkan fitur silahkan pull request di repository ini
+You must have npm installed globally in order to use this build environment. This theme was built using node v11.6.0 and the Gulp CLI v2.0.1. If Gulp is not running properly after running `npm install`, you may need to update node and/or the Gulp CLI locally.
 
-## Contributors
-<a href="https://fauzan.codekop.com/"> Fauzan Falah</a>
+## Bugs and Issues
 
-My Blog : <a href="https://www.codekop.com/"> Codekop.com</a>
+Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/).
 
-Gunakan Aplikasi dengan bijak, dan Selamat Belajar
+## About
+
+Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+
+* <https://startbootstrap.com>
+* <https://twitter.com/SBootstrap>
+
+Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+
+* <https://davidmiller.io>
+* <https://twitter.com/davidmillerhere>
+* <https://github.com/davidtmiller>
+
+Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+
+## Copyright and License
+
+Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/gh-pages/LICENSE) license.

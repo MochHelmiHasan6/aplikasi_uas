@@ -1,78 +1,87 @@
-<?php
-	@ob_start();
-	session_start();
-	if(isset($_POST['proses'])){
-		require 'config.php';
-			
-		$user = strip_tags($_POST['user']);
-		$pass = strip_tags($_POST['pass']);
-
-		$sql = 'select member.*, login.user, login.pass
-				from member inner join login on member.id_member = login.id_member
-				where user =? and pass = md5(?)';
-		$row = $config->prepare($sql);
-		$row -> execute(array($user,$pass));
-		$jum = $row -> rowCount();
-		if($jum > 0){
-			$hasil = $row -> fetch();
-			$_SESSION['admin'] = $hasil;
-			echo '<script>alert("Login Sukses");window.location="index.php"</script>';
-		}else{
-			echo '<script>alert("Login Gagal");history.go(-1);</script>';
-		}
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword">
+    <meta name="author" content="">
 
-    <title>Login To Admin</title>
+    <title>Klinik - Login</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-  <body style="background:#004643;color:#fff;">
+</head>
 
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
+<body class="bg-gradient-primary">
 
-	  <div id="login-page" style="padding-top:3pc;">
-	  	<div class="container">
-		      <form class="form-login" method="POST">
-		        <h2 class="form-login-heading">Aplikasi POS</h2>
-		        <div class="login-wrap">
-		            <input type="text" class="form-control" name="user" placeholder="User ID" autofocus>
-		            <br>
-		            <input type="password" class="form-control" name="pass" placeholder="Password">
-		            <br>
-		            <button class="btn btn-primary btn-block" name="proses" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-		        </div>
-		      </form>	  	
-	  	
-	  	</div>
-	  </div>
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-  </body>
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block" style="background: url(img/login.jpg);
+    background-position: center;
+    background-size: cover">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
+                                    </div>
+                                    <?php
+                                    if (isset($_GET['log'])) {
+                                        echo '<label style="color:red;font-size: 12px">Username/Password salah</label>';
+                                    }
+                                    ?>
+                                    <form class="user" method="POST" action="loginProses.php">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" name="id_user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Masukkan ID">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password">
+                                        </div>
+                                        <input class="submit btn btn-primary btn-user btn-block" type="submit" value="Login">
+                                        <hr>
+                                    </form>
+                                    <div class="text-center">
+                                        <a class="small" href="register.php">Create an Account!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
 </html>
-
